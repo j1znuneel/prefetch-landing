@@ -4,8 +4,9 @@
   --color-background: #FAFAFA;
   --color-foreground: #0A0A0A;
   --color-subtext: #444444;
-  --font-sans: "Sanseriffic", "Inter", "Geist", "Segoe UI", sans-serif;
+  --font-sans: "Coolvetica", "Inter", "Geist", "Segoe UI", sans-serif;
   --font-display: "ThisAppeal", sans-serif;
+  --font-mono: "Geist Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
 }
 
 @font-face {
@@ -17,8 +18,8 @@
 }
 
 @font-face {
-  font-family: "Sanseriffic";
-  src: url("/Sanseriffic.otf") format("opentype");
+  font-family: "Coolvetica";
+  src: url("/Coolvetica Rg Cond.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -31,24 +32,36 @@
 
 @layer base {
   body {
-    @apply bg-background text-foreground antialiased selection:bg-indigo-100 font-sans font-semibold;
+    @apply bg-background text-foreground antialiased selection:bg-indigo-100 font-sans font-semibold tracking-normal;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
   }
   
+  /* ONLY h1 uses ThisAppeal */
   h1 {
     @apply font-display tracking-tight font-extrabold text-foreground leading-[0.9];
   }
 
-  h2, h3, h4 {
-    @apply tracking-tight font-black text-foreground leading-[0.95];
+  /* Subheadings use Coolvetica with optimized tracking */
+  h2,  h4, h5, h6 {
+    @apply font-display tracking-wide font-black text-foreground leading-[0.95];
+  }
+
+  p, span, div, a, li {
+    @apply font-sans;
   }
 
   p {
-    @apply leading-relaxed text-subtext font-bold;
+    @apply leading-relaxed text-subtext font-bold tracking-wide;
   }
 
+  /* Code strictly use mono */
+  code, pre, .font-mono {
+    @apply font-mono font-normal tracking-normal;
+  }
+
+  /* Buttons and links default */
   a, button {
-    @apply font-black;
+    @apply font-bold tracking-wide uppercase text-sm;
   }
 }
 
@@ -70,5 +83,8 @@
 }
 
 .pill-button {
-  @apply px-6 py-2 bg-black text-white rounded-full font-black text-sm transition-all hover:bg-zinc-800 active:scale-95;
+  @apply px-6 py-2 bg-black text-white rounded-full font-bold transition-all hover:bg-zinc-800 active:scale-95;
+}
+.pill-button-2 {
+  @apply px-12 py-2 bg-black text-white rounded-full font-bold transition-all hover:bg-zinc-800 active:scale-95;
 }
