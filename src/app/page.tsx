@@ -14,6 +14,7 @@ import {
   Terminal,
   ChevronRight,
   Eye,
+  Star,
 } from "lucide-react";
 const GITHUB_URL = "https://github.com/j1znuneel/predictive-fetching/";
 const NPM_URL = "https://www.npmjs.com/package/prefetch-ai";
@@ -48,11 +49,13 @@ export default function LandingPage() {
                NPM
             </a>
           </div>
-          <a href={GITHUB_URL} target="_blank" className="pill-button flex items-center gap-2 ">
+          <a href={GITHUB_URL} target="_blank" className="pill-button flex items-center gap-2 !px-8">
+            <Star className="w-4 h-4 fill-white" />
             Star on GitHub
           </a>
-        </div>
-      </nav>
+          </div>
+          </nav>
+
 
 
       <div className="max-w-7xl mx-auto px-6">
@@ -259,3 +262,4 @@ function FeatureCell({ icon, title, description }: { icon: React.ReactNode; titl
     </div>
   );
 }
+
