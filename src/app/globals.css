@@ -1,26 +1,74 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: #FAFAFA;
+  --color-foreground: #0A0A0A;
+  --color-subtext: #444444;
+  --font-sans: "Sanseriffic", "Inter", "Geist", "Segoe UI", sans-serif;
+  --font-display: "ThisAppeal", sans-serif;
+}
+
+@font-face {
+  font-family: "ThisAppeal";
+  src: url("/ThisAppeal-FreeDemo.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sanseriffic";
+  src: url("/Sanseriffic.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FAFAFA;
+  --foreground: #0A0A0A;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-indigo-100 font-sans font-semibold;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+  
+  h1 {
+    @apply font-display tracking-tight font-extrabold text-foreground leading-[0.9];
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  h2, h3, h4 {
+    @apply tracking-tight font-black text-foreground leading-[0.95];
+  }
+
+  p {
+    @apply leading-relaxed text-subtext font-bold;
+  }
+
+  a, button {
+    @apply font-black;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.aurora-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(129, 140, 248, 0.15), rgba(165, 180, 252, 0.1), rgba(244, 114, 182, 0.05), transparent 70%);
+  filter: blur(60px);
+}
+
+.browser-header {
+  @apply flex items-center gap-1.5 px-4 py-3 bg-white/50 border-b border-slate-100;
+}
+
+.dot {
+  @apply w-2.5 h-2.5 rounded-full bg-slate-200;
+}
+
+.grid-border {
+  @apply border-slate-100 border-t border-l first:border-l-0;
+}
+
+.pill-button {
+  @apply px-6 py-2 bg-black text-white rounded-full font-black text-sm transition-all hover:bg-zinc-800 active:scale-95;
 }
