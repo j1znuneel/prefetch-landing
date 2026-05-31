@@ -1,7 +1,7 @@
 import React from "react";
 import { PredictiveMock } from "@/components/PredictiveMock";
+import { HeroCodeBlock } from "@/components/HeroCodeBlock";
 import {
-  Zap,
   Brain,
   Target,
   Globe,
@@ -15,6 +15,8 @@ import {
   ChevronRight,
   Eye,
   Star,
+  Copy,
+  Check,
 } from "lucide-react";
 const GITHUB_URL = "https://github.com/j1znuneel/predictive-fetching/";
 const NPM_URL = "https://www.npmjs.com/package/prefetch-ai";
@@ -49,7 +51,7 @@ export default function LandingPage() {
                NPM
             </a>
           </div>
-          <a href={GITHUB_URL} target="_blank" className="pill-button flex items-center gap-2 !px-8">
+          <a href={GITHUB_URL} target="_blank" className="square-button flex items-center gap-2 !px-8">
             <Star className="w-4 h-4 fill-white" />
             Star on GitHub
           </a>
@@ -68,14 +70,21 @@ export default function LandingPage() {
             Predict user intent in real-time. Prefetch data before the click. 
             Invisible intelligence for React.
           </p>
-          <div className="flex gap-4">
-             <button className="pill-button-2 px-10 py-5 text-xl font-sans uppercase tracking-wide">Get Started</button>
-             <button className="px-10 py-5 bg-white border border-slate-200 rounded-full font- text-xl hover:bg-slate-50 transition-all uppercase tracking-wide">View GitHub</button>
+          <div className="flex flex-col sm:flex-row items-center gap-6 justify-center">
+             <HeroCodeBlock />
+             <a 
+               href={GITHUB_URL} 
+               target="_blank" 
+               className="h-[72px] flex items-center gap-3 px-8 bg-black text-white rounded-2xl font-black text-xl hover:bg-zinc-800 transition-all shadow-xl uppercase tracking-widest"
+             >
+               <Star className="w-5 h-5 fill-white" />
+               Star on GitHub
+             </a>
           </div>
         </section>
 
         {/* Visualizer Section (Visual Centerpiece) */}
-        <section className="py-24 flex justify-center overflow-hidden">
+        <section className="py-12 flex justify-center overflow-hidden">
           <PredictiveMock />
         </section>
 

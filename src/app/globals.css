@@ -88,3 +88,6 @@
 .pill-button-2 {
   @apply px-12 py-2 bg-black text-white rounded-full font-bold transition-all hover:bg-zinc-800 active:scale-95;
 }
+.square-button{
+  @apply px-4 py-2 bg-black  text-white rounded-md font-bold transition-all hover:bg-zinc-800 active:scale-95;
+}
