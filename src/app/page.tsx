@@ -34,7 +34,6 @@ const Logo = () => (
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-[#FAFAFA] text-[#0A0A0A] font-sans">
-      {/* Enormous Navigation */}
       <nav className="max-w-7xl mx-auto px-8 py-12 flex justify-between items-center text-zinc-600">
         <div className="flex items-center gap-4 text-black">
           <Logo />
@@ -243,15 +242,13 @@ export default function LandingPage() {
 
         {/* Simple Footer */}
         <footer className="py-24 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-black text-white rounded-lg flex items-center justify-center font-black text-lg">P</div>
+          <div className="flex items-center gap-4">
+            <Logo />
             <span className="font-extrabold text-xl tracking-tighter">PrefetchAI</span>
           </div>
           <div className="flex gap-12 text-sm font-bold text-[#666666] tracking-wide uppercase">
-            <a href="#" className="hover:text-black">GitHub</a>
-            <a href="#" className="hover:text-black">Twitter</a>
-            <a href="#" className="hover:text-black">Discord</a>
-            <a href="#" className="hover:text-black">MIT License</a>
+            <a href={GITHUB_URL} target="_blank" className="hover:text-black transition-colors">GitHub</a>
+            <a href="#" className="hover:text-black transition-colors">MIT License</a>
           </div>
           <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-300">
             © 2026 PREFETCH_AI_CORE
